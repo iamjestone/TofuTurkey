@@ -1,0 +1,12 @@
+  .axisText {
+    font-family: sans-serif;
+    font-weight: bold;
+    fill: #551aaf;
+    text-anchor: middle;
+  }
+  
+  .chart {
+    display: block;
+    margin: 0;
+  }
+  

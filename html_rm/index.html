@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vegans vs. Environment</title>
+<!-- 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+<!-- 	<link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!--link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"-->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'libs/font-awesome/css/font-awesome.min.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <!--link href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}" rel="stylesheet"-->
+    <!--link href="{{ url_for('static', filename= 'css/styles.css') }}" rel="stylesheet"-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Data Resources </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Analysis Graphs
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="envidata.html">Impact on environment</a>
+                            <a class="dropdown-item" href="2ndgraph.html">Nutritional value</a>
+                            <!--a class="dropdown-item" href="cost.html">Price variation</a-->
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">From Tofu to Turkey: Healthy for you? Healthy for the Earth?</h1>
+                <br>
+                <h3 class="text-center">An exploration of the nutrient value of food 
+                        and the resources used to produce it
+                        </h3><br>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-5">
+                <img src="images/img1.jpg" class="center-block img-responsive" style="width:100%"/>
+            </div>
+
+            <div class="col-md-7">
+                <div class="summary">
+                    <p class="lead">Wander down a grocery store aisle and you will be marvelled by the food options in every category. However what each one of us in the 7.7 billion population choose will have impact the health and environment.
+                    </p>
+                    <p class="lead">Did you know:<br>
+                        1. Average American consumes 1,996 pounds food/year.(Allison A. 2014)<br>
+                        2. 52% Americans believed doing their taxes was easier than figuring out how to eat healthy.(IFICF survey 2014)<br>
+                        3. The environment is affected by our diets — greenhouse gas emissions (CO2), land use and eutrofication (SO2 and PO4). For. eg. U.S. household food consumption emits 8.1 metric tons of CO2 each year.(Weber C et al.2015)<br>
+                            - Comparable to CO2 emmissions by 1.5M passenger vehicles<br>
+                            - Comparable to 57,034 acres deforestation<br>
+                            - In 2005, the average coal-fired power plant in the US emitted 4.6M metric tons of CO2
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <div>
+        <h3><b>Goal of the study</b> </h3> <h4>Understand and comparing the impact of vegan/vegetarian and meat-products on the environment and human health</b></h4>
+    </div>
+</div>
+</body>
+</html>
