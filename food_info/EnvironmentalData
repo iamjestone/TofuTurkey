@@ -1,0 +1,251 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.5
+-- Dumped by pg_dump version 11.5
+
+-- Started on 2019-09-14 12:24:47
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 197 (class 1259 OID 25569)
+-- Name: NutritionData; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."NutritionData" (
+    "Food_ID" integer NOT NULL,
+    "Name" character varying NOT NULL,
+    "Energy(kcal)" numeric NOT NULL,
+    "Carbohydrates(g)" numeric NOT NULL,
+    "Fat(g)" numeric NOT NULL,
+    "Fiber(g)" numeric NOT NULL,
+    "Protein(g)" numeric NOT NULL,
+    "Sugar(g)" numeric NOT NULL,
+    "Type" character varying,
+    "Group" character varying
+);
+
+
+ALTER TABLE public."NutritionData" OWNER TO postgres;
+
+--
+-- TOC entry 196 (class 1259 OID 25560)
+-- Name: clean_environment_data; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.clean_environment_data (
+    "Product" character varying NOT NULL,
+    "NutrUnits" character varying NOT NULL,
+    "LandUse" numeric NOT NULL,
+    "CO2Emissions" numeric NOT NULL,
+    "SO2Emissions" numeric NOT NULL,
+    "PO4Emissions" numeric NOT NULL,
+    "FreshwaterWithdrawals" numeric NOT NULL,
+    "Type" character varying NOT NULL
+);
+
+
+ALTER TABLE public.clean_environment_data OWNER TO postgres;
+
+--
+-- TOC entry 2815 (class 0 OID 25569)
+-- Dependencies: 197
+-- Data for Name: NutritionData; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."NutritionData" ("Food_ID", "Name", "Energy(kcal)", "Carbohydrates(g)", "Fat(g)", "Fiber(g)", "Protein(g)", "Sugar(g)", "Type", "Group") FROM stdin;
+0	GROUND BEEF, UPC: 011110979711	259	0	20.54	0	16.96	0	m	Ingredient
+1	Turkey, Ground, raw	148	0	7.66	0	19.66	0	m	Ingredient
+2	Veggie burgers or soyburgers, unprepared	177	14.27	6.3	4.9	15.7	1.07	v	Ingredient
+3	Pork, fresh, ground, raw	263	0	21.19	0	16.88	1.07	m	Ingredient
+4	Chicken, ground, raw	143	0.04	8.1	0	17.44	0	m	Ingredient
+5	Mushrooms, portabella, raw	22	3.87	0.35	1.3	2.11	2.5	v	Ingredient
+6	Tofu, salted and fermented (fuyu)	116	4.38	8	1.3	8.92	2.5	v	Ingredient
+7	TRADITIONAL SEITAN, UPC: 016741311336	124	4.42	1.77	0	24.78	0	m	Ingredient
+8	VEGAN BURGERS, UPC: 028989102195	142	15.04	7.96	5.3	7.96	2.65	v	Ingredient
+9	VEGAN CHIK 'N CUTLETS, UPC: 833735001802	111	9.52	1.59	4.8	15.87	0	v	Ingredient
+10	BEEF CHILI, UPC: 074136000012	197	6.14	14.04	1.8	12.28	1.75	m	Chili
+11	ORGANIC VEGETARIAN CHILI, UPC: 099482421106	98	14.29	2.04	4.1	5.31	1.22	v	Chili
+12	CHICKEN CHILI WITH BEANS, UPC: 733147108888	119	9.25	4.85	2.2	10.13	0.88	m	Chili
+13	VEGETABLES FOR MEATLOAF, UPC: 070560968867	36	7.14	0	2.4	1.19	3.57	v	Meatloaf
+14	Vegetarian meatloaf or patties	197	8	9	4.6	21	1.2	v	Meatloaf
+15	HOMESTYLE MEATLOAF, UPC: 722515250984	212	9.73	11.5	0	15.93	4.42	m	Meatloaf
+16	Frankfurter, meatless	233	7.7	13.73	3.9	19.61	0	v	hotdog
+17	BEEF HOT DOG, UPC: 073608053501	295	3.85	25.64	0	14.1	1.28	m	hotdog
+18	Frankfurter, turkey	223	3.81	17.29	0	12.23	1.21	m	hotdog
+19	CHICKEN HOT DOGS, UPC: 011110001641	233	11.63	16.28	0	11.63	6.98	m	hotdog
+20	WHOLE COW MILK, UPC: 837152002053	67	4.58	3.75	0	3.33	4.58	m	Milk
+21	ALMOND MILK, UPC: 744473909544	82	12.94	2.35	3.5	3.53	7.06	v	Milk
+22	Beverages, rice milk, unsweetened	47	9.17	0.97	0.3	0.28	5.28	v	Milk
+23	SOY MILK, UPC: 099482417055	33	1.67	1.67	0.4	2.92	0.42	v	Milk
+24	CHOCOLATE MILK, UPC: 041303048603	92	12.08	3.33	0	3.33	12.08	m	Milk
+25	TRADER JOE'S, ORGANIC CHOCOLATE SOY MILK, NON-DAIRY DRINK, 7 GRAMS SOY PROTEIN, EXCELLENT SOURCE OF CALCIUM, VITAMIN D, RIBOFLAVIN & VITAMIN A, CHOCOLATE, VANILLA, UPC: 00693752	54	7.08	1.25	0.4	2.92	5	v	Milk
+26	EGGLESS MAYO, UPC: 850551005753	571	0	71.43	0	0	0	v	Mayo
+27	MAYO, UPC: 011110007803	333	6.67	33.33	0	0	0	m	Mayo
+28	Pork, bacon, rendered fat, cooked	898	0	99.5	0	0.07	0	m	Bacon
+29	Bacon, meatless	309	5.31	29.52	2.6	11.69	0	v	Bacon
+30	FULLY COOKED BEEF BACON, UPC: 071014825606	333	0	30	2.6	13.33	0	m	Bacon
+31	Bacon, turkey, microwaved	368	4.24	25.87	0	29.5	4.24	m	Bacon
+32	VEGETABLE PIZZA, UPC: 663209132028	170	23.91	4.35	1.3	9.13	1.74	v	Pizza
+33	Pizza, meat topping, thick crust, frozen, cooked	274	30.76	11.52	2.3	11.76	3.88	m	Pizza
+34	VEGAN CHEESE PIZZA, UPC: 853407003019	188	25.89	8.04	2.7	2.68	0.89	v	Pizza
+35	CAPRESE CIABATTA SANDWICH, UPC: 815712014241	233	20	12.36	1.8	10.18	1.82	v	Sandwich
+36	FOUR CHEESE STUFFED SANDWICHES, UPC: 754807071717	260	31.5	9.45	1.6	10.24	2.36	v	Sandwich
+37	EGG SALAD SANDWICH, UPC: 046567507453	222	19.19	12.63	3	9.6	2.02	v	Sandwich
+38	FALAFEL SANDWICH, UPC: 825779000040	145	23.35	3.08	4.4	6.17	2.64	v	Sandwich
+39	PASTRAMI & BABY SWISS SANDWICH, UPC: 826766143214	219	21.55	6.36	1.4	15.55	1.41	m	Sandwich
+40	PULLED PORK SANDWICH, UPC: 755795922432	239	31.52	7.07	1.6	10.33	9.78	m	Sandwich
+41	SAUSAGE SANDWICHES, UPC: 078742101903	302	22.22	19.05	0.8	9.52	2.38	m	Sandwich
+42	PEANUT BUTTER & GRAPE JELLY SANDWICH, UPC: 030223104469	286	30.48	14.29	3.8	9.52	7.62	v	Sandwich
+43	Butter, without salt	717	0.06	81.11	0	0.85	0.06	m	Fat spread
+44	Avocados, raw, California	167	8.64	15.41	6.8	1.96	0.3	v	Fat spread
+45	MARGARINE, UPC: 011161470021	714	0	78.57	0	0	0	v	Fat spread
+46	Yogurt, plain, whole milk	61	4.66	3.25	0	3.47	4.66	m	Yogurt
+47	SILK Plain soy yogurt	66	9.69	1.76	0.4	2.64	5.29	v	Yogurt
+48	Snacks, beef jerky, chopped and formed	410	11	25.6	1.8	33.2	9	m	Jerky
+49	PORK JERKY, UPC: 070411607990	286	32.14	7.14	0	25	28.57	m	Jerky
+50	CHICKEN JERKY, UPC: 853385003995	286	10.71	5.36	0	42.86	7.14	m	Jerky
+51	MEATLESS VEGAN JERKY SEITAN, UPC: 838455000197	264	28.57	7.14	3.6	35.71	14.29	v 	Jerky
+52	MEATLESS VEGAN JERKY SOY, UPC: 838455000029	354	28.57	10.71	3.6	35.71	10.71	v	Jerky
+53	TERA'S WHEY, UNSWEETENED WHEY PROTEIN ISOLATE, UPC: 850628002951	176	0	0	0	44.12	0	m	Protein Powder
+54	Soy protein isolate	335	0	3.39	0	88.32	0	v	Protein Powder
+55	UNSWEETENED PEA PROTEIN POWDER, UPC: 039978003607	370	7.41	5.56	3.7	77.78	0	v	Protein Powder
+56	Cheese, swiss	393	1.44	30.99	0	26.96	0	m	Cheese
+57	Cheese, gouda	356	2.22	27.44	0	24.94	2.22	m	Cheese
+58	Cheese, cream	350	5.52	34.44	0	6.15	3.76	m	Cheese
+59	Cheese, parmesan, grated	420	13.91	27.84	0	28.42	0.07	m	Cheese
+60	CREAM CHEESE STYLE SPREAD, UPC: 856624004081	286	3.57	25	0	10.71	0	v	Cheese
+61	VEGAN CHAO SLICES, UPC: 638031705719	300	20	22.5	0	0	0	v	Cheese
+62	VEGAN PARMESAN CHEESE, UPC: 689076700429	500	25	37.5	0	25	0	v	Cheese
+63	VEGAN EGG, UPC: 049568460024	400	50	15	40	20	0	v	Egg
+64	Egg, whole, raw, fresh	143	0.72	9.51	0	12.56	0.37	m	Egg
+65	MINESTRONE VEGAN SOUP, UPC: 767335011032	531	68.75	1.56	18.8	15.62	9.38	v	Soup
+66	LENTIL VEGAN SOUP, UPC: 767335077717	53	9.8	0.2	4.1	3.27	1.22	v	Soup
+67	ORGANIC BUTTERNUT BISQUE VEGAN SOUP, UPC: 767335077922	49	11.43	0	0.8	0.82	2.04	v	Soup
+68	ORGANIC TORTILLA STYLE VEGAN SOUP, UPC: 767335077816	41	8.16	0.2	1.6	2.04	0.82	v	Soup
+69	Soup, minestrone, canned, chunky, ready-to-serve	53	8.64	1.17	2.4	2.13	2.17	m	Soup
+70	Soup, lentil with ham, canned, ready-to-serve	56	8.16	1.12	2.4	3.74	2.17	m	Soup
+71	TORTILLA SOUP, UPC: 041220804214	82	6.12	4.49	0.8	4.49	1.63	m	Soup
+72	CAMPBELL'S, Chicken Noodle Soup, condensed	47	5.97	1.53	0.8	2.37	0	m	Soup
+73	WHITE MISO SOUP, UPC: 075810371015	208	25	4.17	0	16.67	0	v	Soup
+74	VEGAN MUFFIN, UPC: 046567607757	283	46.9	8.85	1.8	4.42	25.66	v	Muffin
+75	BLUEBERRY MUFFINS, UPC: 014821089014	338	50.7	14.08	1.4	5.63	1.41	m	Muffin
+76	Milk shakes, thick vanilla	112	17.75	3.03	0	3.86	17.75	m	Milkshake
+77	AMAZAKE RICE SHAKE, ALMOND SHAKE, UPC: 030264002106	84	13.92	1.69	2.1	1.69	13.08	v	Milkshake
+78	VEGAN FRITTATA, UPC: 896165002559	200	15.88	12.35	4.1	8.82	1.76	v	Frittata
+79	SOUTH WESTERN STYLE FRITTATA, UPC: 07789042147	206	6.38	13.48	0	9.93	0.71	m	Frittata
+80	VEGAN MAC 'N CHEESE, UPC: 648912001090	187	21.05	8.77	0.9	6.14	0.88	v	Mac and Cheese
+81	MAC & CHEESE, UPC: 078742249575	155	17.31	6.36	0.7	7.42	1.41	m	Mac and Cheese
+82	PALEO VEGAN GELATO, UPC: 863186000338	220	26.61	11.93	0.9	4.59	20.18	v	Ice Cream
+83	BEN & JERRY'S, ICE CREAM, COFFEE, COFFEE BUZZBUZZBUZZ!, UPC: 076840298617	250	25.96	15.38	1	3.85	23.08	m	Ice Cream
+84	VEGAN BROWNIE RECTANGLE, UPC: 852748002804	380	56	19	3	2	34	v	Brownies
+85	Cookies, brownies, commercially prepared	405	63.9	16.3	2.1	4.8	36.61	m	Brownies
+86	BREADED VEGAN SCALLOPS, UPC: 851110003197	50	11	1	3	0	1	v	Scallops
+87	BREADED BAY SCALLOPS, UPC: 688267138959	226	21.43	10.71	1.2	10.71	1.19	m	Scallops
+88	SOUL VEGAN, LASAGNA, UPC: 878425000017	207	15	12.14	2.1	10	2.86	v	Lasagna
+89	Lasagna, cheese, frozen, unprepared	145	21.61	4.22	1.7	5.06	3.8	m	Lasagna
+90	HEALTHY VEGAN RAVIOLI, UPC: 021605052300	160	25.69	2.08	2.1	8.33	0.69	v	Ravioli
+91	Ravioli, cheese-filled, canned	77	13.64	1.45	1.3	2.48	3.72	m	Ravioli
+92	VEGAN BREAKFAST SANDWICH, UPC: 016741255609	219	25.34	8.9	4.8	10.27	5.48	v	Breakfast Sandwich
+93	BIG BURLY BREAKFAST SANDWICH, UPC: 078742136059	243	22.55	11.91	0.9	10.64	6.81	m	Breakfast Sandwich
+94	VEGAN MUSHROOM GRAVY, UPC: 018053720516	42	5	0	1.7	1.67	1.67	v	Gravy
+95	Gravy, turkey, dry	367	65.12	7.19	1.7	10.42	1.67	m	Gravy
+96	VEGAN MOLTEN CHOCOLATE CAKE, UPC: 632930915965	369	51.54	16.92	1.5	3.85	40.77	v	Cake
+97	MOLTEN CHOCOLATE LAVA CAKE, UPC: 021130085415	342	37.72	20.18	2.6	5.26	22.81	m	Cake
+98	VEGAN SHANGHAI DUMPLING, UPC: 680314888848	152	22.22	4.55	1.5	7.07	2.02	v	Dumplings
+99	BEEF DUMPLINGS, UPC: 617762259067	227	31.82	6.36	0.9	10.91	0	m	Dumplings
+\.
+
+
+--
+-- TOC entry 2814 (class 0 OID 25560)
+-- Dependencies: 196
+-- Data for Name: clean_environment_data; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.clean_environment_data ("Product", "NutrUnits", "LandUse", "CO2Emissions", "SO2Emissions", "PO4Emissions", "FreshwaterWithdrawals", "Type") FROM stdin;
+Wheat & Rye (Bread)	2.7	1	0.5	5	2	157	v
+Maize (Meal)	4.5	0.4	0.3	2.2	0.5	10	v
+Barley (Beer)	5	0.2	0.2	1.2	0.4	1	v
+Oatmeal	2.6	2.9	1	3.7	3.8	256	v
+Rice	3.7	0.6	1	5	2.5	427	v
+Potatoes	0.7	1.1	0.6	4.9	6.1	4	v
+Cassava	1	1.4	1.1	3.2	0.7	0	v
+Cane Sugar	0	1.8	3.2	18	11	8	v
+Beet Sugar	0	1.5	1.8	12	4.3	12	v
+Other Pulses	2.1	5.7	0.6	8.9	6.4	0	v
+Peas	2.2	3	0.4	4.6	0.8	0	v
+Nuts	1.6	5.3	-0.8	21	8.9	1117	v
+Groundnuts	2.6	3	1.3	6.3	6.5	344	v
+Soymilk	0	0.6	0.9	2.5	1.2	1	v
+Tofu	1.6	2.1	1.6	3.8	4.2	4	v
+Soybean Oil	0	10	3.9	15	14	2	v
+Palm Oil	0	2.4	7.2	18	10	6	v
+Sunflower Oil	0	16	3.5	19	19	10	v
+Rapeseed Oil	0	9.4	3.5	23	16	1	v
+Olive Oil	0	17	5.1	34	39	318	v
+Tomatoes	0	0.2	0.7	5.2	1.9	77	v
+Onions & Leeks	0	0.3	0.4	3.3	1.6	2	v
+Root Vegetables	0	0.3	0.4	2.9	1	10	v
+Brassicas	0	0.3	0.4	8.8	5.7	55	v
+Other Vegetables	0	0.2	0.4	3.7	1.8	81	v
+Citrus Fruit	0	0.7	0.3	3.8	1.7	37	v
+Bananas	0	1.4	0.8	6.1	2.1	1	v
+Apples	0	0.5	0.4	4	2	115	v
+Berries & Grapes	0	2.6	1.4	6.9	1	404	v
+Wine	12.5	0.1	0.1	0.9	0.3	0	v
+Other Fruit	0	0.9	0.7	5.4	2.1	4	v
+Coffee	67	0.2	0.1	1.3	0.7	0	v
+Dark Chocolate	20	2.7	0.2	1.5	3.4	1	v
+Bovine Meat (beef herd)	2	85	30	136	161	371	m
+Bovine Meat (dairy herd)	2	13	17	146	71	1324	m
+Lamb & Mutton	2	64	20	68	51	230	m
+Pig Meat	1.6	8.3	6.5	71	33	1119	m
+Poultry Meat	1.7	6.4	4.3	37	20	214	m
+Milk	0	2.1	2.7	21	11	197	m
+Cheese	2.2	9.1	8.4	78	45	706	m
+Eggs	1.1	5.1	3.8	49	19	570	v
+Fish (farmed)	2.3	2.5	3.5	18	107	693	m
+Crustaceans (farmed)	1.5	0.6	10	72	96	818	m
+\.
+
+
+--
+-- TOC entry 2692 (class 2606 OID 25576)
+-- Name: NutritionData pk_NutritionData; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."NutritionData"
+    ADD CONSTRAINT "pk_NutritionData" PRIMARY KEY ("Food_ID");
+
+
+--
+-- TOC entry 2690 (class 2606 OID 25567)
+-- Name: clean_environment_data pk_clean_environment_data; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.clean_environment_data
+    ADD CONSTRAINT pk_clean_environment_data PRIMARY KEY ("Product");
+
+
+-- Completed on 2019-09-14 12:24:48
+
+--
+-- PostgreSQL database dump complete
+--
+
